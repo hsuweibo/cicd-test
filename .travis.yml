@@ -1,0 +1,13 @@
+GNU nano 4.8                                .travis.yml                                           
+sudo: required
+language: generic
+
+services:
+    - docker
+
+before_install:
+    - docker build -t hsuweibo/cicd-pipeline -f Dockerfile.dev .
+
+script:
+    - docker run -e CI=true hsuweibo/cicd-pipeline npm run test -- --coverage
+
