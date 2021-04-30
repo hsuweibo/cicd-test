@@ -10,3 +10,16 @@ before_install:
 script:
     - docker run -e CI=true hsuweibo/cicd-pipeline npm run test -- --coverage
 
+deploy:
+    provider: elasticbeanstalk
+    region: "ca-central-1"
+    app: "cicd-test"
+    env: "cicdtest-env1"
+    bucket_name: "elasticbeanstalk-ca-central-1-147578992911"
+    bucket_path: "cicd-test"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    
+
