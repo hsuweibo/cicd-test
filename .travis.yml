@@ -14,7 +14,7 @@ deploy:
     provider: elasticbeanstalk
     region: "ca-central-1"
     app: "cicd-test"
-    env: "cicdtest-env1"
+    env: "cicdtest-env-1"
     bucket_name: "elasticbeanstalk-ca-central-1-147578992911"
     bucket_path: "cicd-test"
     on:
